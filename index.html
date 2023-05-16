@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hangman Game</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.css" defer></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <h1>Hangman</h1>
@@ -32,25 +32,16 @@
       </svg>
 
       <div class="wrong-ltr-container">
-        <div class="wrong-ltr">
-          <p>Wrong</p>
-          <span>a,e,t,e</span>
-        </div>
+        <div class="wrong-ltr"></div>
       </div>
 
-      <div class="word" id="word">
-        <div class="letter">h</div>
-        <div class="letter">e</div>
-        <div class="letter">l</div>
-        <div class="letter">l</div>
-        <div class="letter">o</div>
-      </div>
+      <div class="word" id="word"></div>
     </div>
 
     <!-- Container for popup messages -->
     <div class="popup-container" id="popup-container">
       <div class="popup">
-        <h2 id="final-message">You Have Won</h2>
+        <h2 id="final-message"></h2>
         <button id="play-button">Play Again</button>
       </div>
     </div>
