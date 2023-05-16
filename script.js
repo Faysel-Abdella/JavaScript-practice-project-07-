@@ -95,3 +95,8 @@ window.addEventListener("keydown", (e) => {
 });
 
 displayWord();
+
+//Play again
+playAgainBtn.addEventListener("click", () => {
+  location.reload();
+});
