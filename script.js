@@ -1,5 +1,5 @@
 const wordEl = document.getElementById("word");
-const wrongLettersEl = document.getElementById("wrong-letters");
+const wrongLettersEl = document.getElementById("wrong-ltr");
 const playAgainBtn = document.getElementById("play-button");
 const popup = document.getElementById("popup-container");
 const notification = document.getElementById("notification-container");
@@ -36,14 +36,36 @@ function displayWord() {
   }
 }
 
-function updateWrongLettersEl() {}
+function updateWrongLettersEl() {
+  // Display wrong letters
+  wrongLettersEl.innerHTML = `
+  ${wrongLetters.length > 0 ? "<p>Wrong</p>" : ""}
+  ${wrongLetters.map((letter) => `<span>${letter}</span>`)}
+  `;
+
+  figureParts.forEach((part, index) => {
+    const error = wrongLetters.length;
+
+    if (index < error) {
+      part.style.display = "block";
+    } else {
+      part.style.display = "none";
+    }
+  });
+
+  // Check if lost
+  if (wrongLetters.length === figureParts.length) {
+    finalMessage.innerText = "Unfortunately you lost. 😕";
+    popup.style.display = "flex";
+  }
+}
 
 function showNotification() {
   notification.classList.add("show");
 
   setTimeout(() => {
     notification.classList.remove("show");
-  }, 2000);
+  }, 3000);
 }
 
 //Keydown letter press
